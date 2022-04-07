@@ -1,0 +1,25 @@
+class Student{
+    int ID;
+	String Name,Branch;
+	static String University="GEHU";
+
+	void setDetails(int r,String a,String b){
+       ID= r;
+       Name= a;
+       Branch= b;
+	}
+
+	void showDetails(){
+	    System.out.println(ID);
+	    System.out.println(Name);
+	    System.out.println(Branch);
+	    System.out.println(University);
+	}
+
+	public static void main(String args[]){
+	     Student s=new Student();
+	     int r= Integer.parseInt(args[0]);
+	     s.setDetails(r,args[1],args[2]);
+	     s.showDetails();
+	}
+}

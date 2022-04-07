@@ -36,13 +36,13 @@ public static void main(String args[])
     
     System.out.println("Enter the ID: ");
     int n=sc.nextInt();
+    sc.nextLine();
 
     System.out.println("Enter the name: ");
-    String a=sc.next();
+    String a=sc.nextLine();
 
     System.out.println("Enter the department: ");
     String b=sc.next();
-    sc.nextLine();
 
     System.out.println("Enter the salary: ");
     double c=sc.nextDouble();

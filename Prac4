@@ -1,0 +1,53 @@
+import java.util.*;
+class Employee{
+	int ID;
+	String name;
+	String department;
+	double salary;
+
+Employee()
+{
+	ID=0;
+	name=" ";
+	department="";
+	salary=0.0d;
+}
+
+void setDetails(int n,String a,String b,double c)
+{
+   ID=n;
+   name=a;
+   department=b;
+   salary=c;
+}
+
+void showDetails()
+{
+	System.out.println(ID);
+	System.out.println(name);
+	System.out.println(department);
+	System.out.println(salary);
+}
+
+public static void main(String args[])
+{
+	Employee e=new Employee();
+	Scanner sc=new Scanner(System.in);
+    
+    System.out.println("Enter the ID: ");
+    int n=sc.nextInt();
+
+    System.out.println("Enter the name: ");
+    String a=sc.next();
+
+    System.out.println("Enter the department: ");
+    String b=sc.next();
+    sc.nextLine();
+
+    System.out.println("Enter the salary: ");
+    double c=sc.nextDouble();
+
+    e.setDetails(n,a,b,c);
+    e.showDetails();
+}
+}

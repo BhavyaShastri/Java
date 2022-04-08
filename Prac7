@@ -1,0 +1,22 @@
+class Append{
+	public static void main(String args[])
+	{
+		StringBuffer sb= new StringBuffer("Hello");
+
+	    sb.append("Java");
+	    System.out.println("String after appending: "+sb+"\n");
+
+	    sb.insert(1,"Java");
+	    System.out.println("Inserting java at index 1: "+sb+"\n");
+
+	    sb.replace(1,3,"Java");
+	    System.out.println(") Replacing characters between index 1 to 2: "+sb+"\n");
+
+	    sb.delete(1,3);
+	    System.out.println("Delete characters between index 1 and 2: "+sb+"\n");
+
+	    sb.reverse();
+	    System.out.println("Reversing the string HELLO: "+sb+"\n");
+
+	}
+}

@@ -1,3 +1,49 @@
+//Using this pointer
+import java.util.*;
+class Employee{
+	int ID;
+	String name;
+	String department;
+	double salary;
+
+Employee(int ID,String name,String department,double salary)
+{
+	this.ID=ID;
+	this.name=name;
+	this.department=department;
+	this.salary=salary;
+}
+
+void showDetails()
+{
+	System.out.println(ID);
+	System.out.println(name);
+	System.out.println(department);
+	System.out.println(salary);
+}
+
+public static void main(String args[])
+{
+	Employee e1=new Employee(211,"Amy","cse",500000);
+	Employee e2=new Employee(467,"Bony","tech",410000);
+	Scanner sc=new Scanner(System.in);
+    
+    e1.showDetails();
+    e2.showDetails();
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 import java.util.*;
 class Employee{
 	int ID;
@@ -49,44 +95,5 @@ public static void main(String args[])
 
     e.setDetails(n,a,b,c);
     e.showDetails();
-}
-}
-
-
-
-
-
-//Using this pointer
-import java.util.*;
-class Employee{
-	int ID;
-	String name;
-	String department;
-	double salary;
-
-Employee(int ID,String name,String department,double salary)
-{
-	this.ID=ID;
-	this.name=name;
-	this.department=department;
-	this.salary=salary;
-}
-
-void showDetails()
-{
-	System.out.println(ID);
-	System.out.println(name);
-	System.out.println(department);
-	System.out.println(salary);
-}
-
-public static void main(String args[])
-{
-	Employee e1=new Employee(211,"Amy","cse",500000);
-	Employee e2=new Employee(467,"Bony","tech",410000);
-	Scanner sc=new Scanner(System.in);
-    
-    e1.showDetails();
-    e2.showDetails();
 }
 }

@@ -1,0 +1,42 @@
+class Jlt{
+
+   static int findNthOccur(String s,char ch,int N)
+   {
+    int occur = 0;
+    for (int i = 0; i < s.length(); i++)
+    {
+        if (s.charAt(i) == ch)
+        {
+            occur += 1;
+        }
+        if (occur == N)
+            return i;
+    }
+    return -1;
+    }
+
+	public static void main(String args[]){
+
+	String s="Java";
+
+    System.out.println("String after concatenation: "+s.concat("Welcome"));
+
+    char result=s.charAt(1);
+    System.out.println("Character at index 1 is: "+result);
+
+    System.out.println("Index of 1st a is: "+s.indexOf('a'));
+
+    
+    System.out.println("Index of 2nd a is: "+findNthOccur("Java",'a',2));
+    //System.out.println('a',s.indexOf('a') +1);
+   
+
+    String s1="JAVA";
+    System.out.println("Compare Java to JAVA: "+s.equals(s1));
+    System.out.println(" Compare Java to JAVA ignoring the case: "+s.equalsIgnoreCase(s1));
+
+    System.out.println("Find the index of first 'a' from last: "+s.lastIndexOf('a'));
+}
+
+}
+

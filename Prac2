@@ -3,8 +3,7 @@ class Bank{
 	String name;
 	int account_no,amount;
 
-	void insert(String a,int b,int c)
-	{
+	void insert(String a,int b,int c){
 	   name=a;
 	   account_no=b;
 	   amount=c;

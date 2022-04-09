@@ -1,0 +1,66 @@
+import java.util.*;
+class Student{
+	int ID;
+	String name,branch,city,university;
+
+	Student(String n){
+	name=n;
+	System.out.println("Constructor with single argument\n");
+    }
+
+    Student(String n,String b){
+    	this(n);
+    	branch=b;
+    	System.out.println("Constructor with 2 arguments\n");
+    }
+
+    Student(String n,String b,String c){
+    	this(n,b);
+    	city=c;
+    	System.out.println("Constructor with 3 arguments\n");
+    }
+
+    Student(String n,String b,String c,String u){
+    	this(n,b,c);
+    	university=u;
+    	System.out.println("Constructor with 4 arguments\n");
+    }
+
+    Student(String n,String b,String c,String u,int i){
+    	this(n,b,c,u);
+    	ID=i;
+    	System.out.println("Constructor with 5 arguments\n");
+    }
+
+    void Display(){
+    	System.out.println("Student ID: "+ID);
+    	System.out.println("Name: "+name);
+    	System.out.println("Branch: "+branch);
+    	System.out.println("City: "+city);
+    	System.out.println("University: "+university);
+    }
+
+    public static void main(String args[]){
+    	
+    	Scanner sc=new Scanner(System.in);
+        
+        System.out.println("Enter the name of the student: ");
+    	String n=sc.nextLine();
+
+    	System.out.println("Enter the branch of the student: ");
+    	String b=sc.nextLine();
+   
+        System.out.println("Enter the city: ");
+        String c=sc.nextLine();
+
+        System.out.println("Enter the University name: ");
+        String u=sc.nextLine();
+
+        System.out.println("Enter the student ID: ");
+        int i=sc.nextInt();
+
+        Student s=new Student(n,b,c,u,i);
+        s.Display();
+
+    }
+}

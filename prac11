@@ -1,0 +1,23 @@
+class Shape{
+	void area(int l,int b){
+	  int a=l*b;
+	  System.out.println("Required area of rectangle= "+a);
+	}
+
+	void area(double l,double b,double h){
+	   double a=0.5*l*b*h;
+	   System.out.println("Reqired area of triangle= "+a);
+	}
+
+	void area(double r){
+	   double a=3.14*r*r;
+	   System.out.println("Required area of circle= "+a);
+	}
+
+	public static void main(String args[]){
+	  Shape s=new Shape();
+	  s.area(1,2);
+	  s.area(2,3,2);
+	  s.area(3);
+	}
+}

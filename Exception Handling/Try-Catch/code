@@ -1,0 +1,16 @@
+class Xyz
+{
+	public static void main(String args[])
+	{
+		try{
+		int x=Integer.parseInt(args[0]);
+		int y=Integer.parseInt(args[1]);
+		System.out.println(x/y);  //100/0 may raise exception
+	    }
+
+	    catch(ArithmeticException e){
+	    	System.out.println(e);
+	    }
+
+	}
+}

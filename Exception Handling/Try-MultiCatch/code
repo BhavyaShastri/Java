@@ -26,3 +26,4 @@ class Abc{
 
 
 //Since 1st arithmetic exception will be encountered hence,it will be handled first and the program finishes....
+//try block contains two exceptions. But at a time only one exception occurs and its corresponding catch block is executed.

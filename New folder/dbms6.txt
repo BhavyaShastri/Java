@@ -1,0 +1,464 @@
+SQL> conn
+Enter user-name: bhaav
+Enter password:
+Connected.
+SQL> select * from tab;
+
+TNAME                          TABTYPE  CLUSTERID
+------------------------------ ------- ----------
+CAR                            TABLE
+EMP2                           TABLE
+EMPLOYEE                       TABLE
+NEWCAR                         TABLE
+NEWEMP                         TABLE
+STUDENTS                       TABLE
+VEHICLE                        TABLE
+XYZ                            TABLE
+
+8 rows selected.
+
+SQL> create table Account(AccountNo number primary key,CustName varchar2(20) NOT NUll,AccountType varchar2(20) default 'Saving',Balance number check(Balance>1000),PassportNo varchar2(20) unique);
+
+Table created.
+
+SQL> desc Account;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ACCOUNTNO                                 NOT NULL NUMBER
+ CUSTNAME                                  NOT NULL VARCHAR2(20)
+ ACCOUNTTYPE                                        VARCHAR2(20)
+ BALANCE                                            NUMBER
+ PASSPORTNO                                         VARCHAR2(20)
+
+SQL> select * from user_constraints;
+OWNER                                                                                                                    CONSTRAINT_NAME                C TABLE_NAME
+------------------------------------------------------------------------------------------------------------------------ ------------------------------ - ------------------------------
+SEARCH_CONDITION
+--------------------------------------------------------------------------------
+R_OWNER                                                                                                                  R_CONSTRAINT_NAME              DELETE_RU STATUS   DEFERRABLE     DEFERRED
+------------------------------------------------------------------------------------------------------------------------ ------------------------------ --------- -------- -------------- ---------
+VALIDATED     GENERATED      BAD RELY LAST_CHAN INDEX_OWNER                    INDEX_NAME                     INVALID VIEW_RELATED
+------------- -------------- --- ---- --------- ------------------------------ ------------------------------ ------- --------------
+BHAAV                                                                                                                    SYS_C007114                    C CAR
+EngineCapacity > 1000
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          26-SEP-22
+
+BHAAV                                                                                                                    SYS_C007115                    C CAR
+doors>1
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          26-SEP-22
+
+BHAAV                                                                                                                    SYS_C007113                    C CAR
+"COMPANIES" IS NOT NULL
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          26-SEP-22
+
+BHAAV                                                                                                                    SYS_C007116                    C CAR
+weight>1000
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          26-SEP-22
+
+BHAAV                                                                                                                    SYS_C007117                    C CAR
+TopSpeed<500
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          26-SEP-22
+
+BHAAV                                                                                                                    SYS_C007118                    C CAR
+RPM>1000
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          26-SEP-22
+
+BHAAV                                                                                                                    SYS_C007121                    C VEHICLE
+"COMPANY" IS NOT NULL
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          26-SEP-22
+
+BHAAV                                                                                                                    SYS_C007223                    C NEWCAR
+"COMPANY" IS NOT NULL
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          09-OCT-22
+
+BHAAV                                                                                                                    SYS_C007229                    C XYZ
+cat>10
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          09-OCT-22
+
+BHAAV                                                                                                                    SYS_C007230                    C XYZ
+puppy<3
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          09-OCT-22
+
+BHAAV                                                                                                                    SYS_C007228                    C XYZ
+"PUPPY" IS NOT NULL
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          09-OCT-22
+
+BHAAV                                                                                                                    SYS_C007431                    C ACCOUNT
+Balance>1000
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          08-NOV-22
+
+BHAAV                                                                                                                    SYS_C007430                    C ACCOUNT
+"CUSTNAME" IS NOT NULL
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          08-NOV-22
+
+BHAAV                                                                                                                    SYS_C007119                    P CAR
+
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          26-SEP-22 BHAAV                          SYS_C007119
+
+BHAAV                                                                                                                    SYS_C007120                    U CAR
+
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          26-SEP-22 BHAAV                          SYS_C007120
+
+BHAAV                                                                                                                    SYS_C007231                    U XYZ
+
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          09-OCT-22 BHAAV                          SYS_C007231
+
+BHAAV                                                                                                                    SYS_C007232                    P XYZ
+
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          09-OCT-22 BHAAV                          SYS_C007232
+
+BHAAV                                                                                                                    SYS_C007432                    P ACCOUNT
+
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          08-NOV-22 BHAAV                          SYS_C007432
+
+BHAAV                                                                                                                    SYS_C007433                    U ACCOUNT
+
+                                                                                                                                                                  ENABLED  NOT DEFERRABLE IMMEDIATE
+VALIDATED     GENERATED NAME          08-NOV-22 BHAAV                          SYS_C007433
+
+
+19 rows selected.
+
+
+
+
+
+SQL> insert into account(AccountNo,CustName,Balance,PassportNo) values(117501,'Puneet',1100,'B9895');
+
+1 row created.
+
+SQL> insert into account(AccountNo,Balance,PassportNo) values(117502,2100,'A9895');
+insert into account(AccountNo,Balance,PassportNo) values(117502,2100,'A9895')
+*
+ERROR at line 1:
+ORA-01400: cannot insert NULL into ("BHAAV"."ACCOUNT"."CUSTNAME")
+
+
+SQL> insert into account(AccountNo,CustName,Balance,PassportNo) values(117502,'Nihal',2100,'A9895');
+
+1 row created.
+
+SQL> insert into account(AccountNo,CustName,AccountType,Balance,PassportNo) values(117507,'Rohit','Current',500,'C9898');
+insert into account(AccountNo,CustName,AccountType,Balance,PassportNo) values(117507,'Rohit','Current',500,'C9898')
+*
+ERROR at line 1:
+ORA-02290: check constraint (BHAAV.SYS_C007431) violated
+
+
+SQL> insert into account(AccountNo,CustName,AccountType,Balance,PassportNo) values(117507,'Rohit','Current',1500,'C9898');
+
+1 row created.
+
+SQL> insert into account(AccountNo,CustName,AccountType,Balance,PassportNo) values(117507,'Rohit','Current',5000,'C9898');
+insert into account(AccountNo,CustName,AccountType,Balance,PassportNo) values(117507,'Rohit','Current',5000,'C9898')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (BHAAV.SYS_C007432) violated
+
+SQL> insert into account(AccountNo,CustName,AccountType,Balance,PassportNo) values(117509,'Rohit','Current',5000,'D9899');
+
+1 row created.
+
+SQL> insert into account(AccountNo,CustName,Balance,PassportNo) values(117504,'Kumar',1100,'C9898');
+insert into account(AccountNo,CustName,Balance,PassportNo) values(117504,'Kumar',1100,'C9898')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (BHAAV.SYS_C007433) violated
+
+
+SQL> insert into account(AccountNo,CustName,Balance,PassportNo) values(117504,'Kumar',1100,'E9899');
+
+1 row created.
+
+
+SQL> insert into account(AccountNo,CustName,Balance,PassportNo) values(117508,'Shweta',7100,'A6789');
+
+1 row created.
+
+SQL> insert into account(AccountNo,CustName,AccountType,Balance) values(117503,'Deepak','Current',12000);
+
+1 row created.
+
+SQL> select * from Account;
+
+ ACCOUNTNO CUSTNAME             ACCOUNTTYPE             BALANCE PASSPORTNO
+---------- -------------------- -------------------- ---------- --------------------
+    117501 Puneet               Saving                     1100 B9895
+    117502 Nihal                Saving                     2100 A9895
+    117507 Rohit                Current                    1500 C9898
+    117508 Rohit                Current                    5000 D9899
+    117504 Kumar                Saving                     1100 E9899
+    117509 Shweta               Saving                     7100 A6789
+    117503 Deepak               Current                   12000
+
+7 rows selected.
+
+
+SQL> create table Account2(AccountNo number primary key,CustName varchar2(20) NOT NULL,AccountType varchar2(20) default 'Current',PassportNo varchar2(20) unique);
+
+Table created.
+
+SQL> desc Account2;
+ Name                                                                                                              Null?    Type
+ ----------------------------------------------------------------------------------------------------------------- -------- ----------------------------------------------------------------------------
+ ACCOUNTNO                                                                                                         NOT NULL NUMBER
+ CUSTNAME                                                                                                          NOT NULL VARCHAR2(20)
+ ACCOUNTTYPE                                                                                                                VARCHAR2(20)
+ PASSPORTNO                                                                                                                 VARCHAR2(20)
+
+
+
+
+
+
+Q1.)    SQL> create table Account(AccountNo Number Primary Key,CustName varchar(20) Not Null,AccountType varchar(10) Default 'Saving',Balance Number check(Balance>1000),PassportNo varchar(10) Unique);
+
+Table created.
+
+Q2.)    SQL> desc Account;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ACCOUNTNO                                 NOT NULL NUMBER
+ CUSTNAME                                  NOT NULL VARCHAR2(20)
+ ACCOUNTTYPE                                        VARCHAR2(10)
+ BALANCE                                            NUMBER
+ PASSPORTNO                                         VARCHAR2(10)
+
+Q3).   SQL> select Constraint_Name,Constraint_Type from User_Constraints where TABLE_NAME='ACCOUNT';
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SYS_C007087                    C
+SYS_C007088                    C
+SYS_C007089                    P
+SYS_C007090                    U
+
+//C- Check Constraint, P- Primary Key Constraint, U-Unique Key Constriants, R- Foreign Key Constarints.
+
+
+
+Q4).    SQL> insert all into Account(AccountNo,CustName,Balance,PassportNo) values(117501,'Puneet',1100,'B9895')
+  2  into Account(AccountNo,CustName,Balance,PassportNo) values(117502,'Ambuj',2100,'A9895')
+  3  into Account values(117507,'Rohit','Current',1500,'C9898')
+  4  into Account values(117506,'Rohit','Current',5000,'D9898')
+  5  into Account(AccountNo,CustName,Balance,PassportNo) values(117504,'Kumar',1100,'E9898')
+  6  into Account(AccountNo,CustName,Balance,PassportNo) values(117508,'Shweta',7100,'A6789')
+  7  into Account(AccountNo,CustName,AccountType,Balance) values(117503,'Deepak','Current',12000)
+  8  select * from dual;
+
+7 rows created.
+
+Q5).   SQL> create table Account2(AccountNo Number Primary Key,CustName varchar(20) Not Null,AccountType varchar(10) Default 'Current',Balance Number check(Balance>5000),PassportNo varchar(10) Unique);
+
+Table created.
+
+Q6).   SQL> desc Account2;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ACCOUNTNO                                 NOT NULL NUMBER
+ CUSTNAME                                  NOT NULL VARCHAR2(20)
+ ACCOUNTTYPE                                        VARCHAR2(10)
+ BALANCE                                            NUMBER
+ PASSPORTNO                                         VARCHAR2(10)
+
+Q7).    SQL> create table Account3 (AccountNo Number, CustName varchar(20) Not Null,Primary key(AccountNo));
+
+Table created.
+
+Q8).   SQL> select Constraint_Name,Constraint_Type from User_Constraints where TABLE_NAME='ACCOUNT2';
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SYS_C007095                    C
+SYS_C007096                    C
+SYS_C007097                    P
+SYS_C007098                    U
+
+SQL> select Constraint_Name,Constraint_Type from User_Constraints where TABLE_NAME='ACCOUNT3';
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SYS_C007110                    P
+SYS_C007109                    C
+
+Q9). SQL> alter table Account3 drop constraint SYS_C007109;
+
+Table altered.
+
+Q10).   SQL> create table Account4(AccountNo Number Primary Key,CustName varchar(20) Not Null,AccountType varchar(20) Default 'Current',Balance Number Check(Balance>5000),PassportNo varchar(20) Unique);
+
+Table created.
+
+Q11).      SQL> select Constraint_Name,Constraint_Type from User_Constraints where TABLE_NAME='ACCOUNT4';
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SYS_C007111                    C
+SYS_C007112                    C
+SYS_C007113                    P
+SYS_C007114                    U
+
+Q12). SQL> alter table Account4 drop constraint SYS_C007113;
+
+Table altered.
+
+SQL> alter table Account4 drop constraint SYS_C007114;
+
+Table altered.
+
+Q13).   SQL> create table Account5(AccountNo Number,CustName varchar(20),Balance Number);
+
+Table created.
+
+Q14). 
+SQL> insert all into Account5 values(8111,'Puneet',1000)
+  2  into Account5 values(8111,'Mudit',2000)
+  3  into Account5 values(8114,'Kumar',3000)
+  4  into Account5 values(8115,'Shweta',500)
+  5  into Account5 values(8115,'Deepak',6000)
+  6  select * from dual;
+
+5 rows created.
+
+Q15).  SQL> desc Account5;
+ Name                                                                                                                                    Null?    Type
+ ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ ACCOUNTNO                                                                                                                                          NUMBER
+ CUSTNAME                                                                                                                                           VARCHAR2(20)
+ BAL                                                                                                                                                NUMBER
+
+Q16).  SQL> alter table Account5 add Primary Key(AccountNo);
+alter table Account5 add Primary Key(AccountNo)
+*
+ERROR at line 1:
+ORA-02437: cannot validate (AMBUJ.SYS_C007115) - primary key violated
+
+Reason: There are duplicate  values in AccountNo Column.
+
+
+Q17).  SQL> update Account5 set AccountNo=8112 where CustName='Mudit';
+
+1 row updated.
+
+SQL> update Account5 set AccountNo=8116 where CustName='Deepak';
+
+1 row updated.
+
+SQL> alter table Account5 add Primary Key(AccountNo);
+
+Table altered.
+
+
+Q18). SQL> select * from User_Constraints where TABLE_NAME='Account5';
+
+no rows selected
+
+Q19).  SQL> alter table Account5 add Unique(CustName);
+
+Table altered.
+
+Q20).  SQL> alter table Account5 add check(Balance>1500);
+alter table Account5 add check(Balance>1500)
+*
+ERROR at line 1:
+ORA-02293: cannot validate (AMBUJ.SYS_C007118) - check constraint violated
+
+Reason: There are entries where Balance <1500 
+
+Q21). SQL> update Account5 set Balance=1600 where CustName='Shweta';
+
+1 row updated.
+
+SQL> update Account5 set Balance=3600 where CustName='Puneet';
+
+1 row updated.
+
+SQL> alter table Account5 add check(Balance>1500);
+
+Table altered.
+
+Q22).  SQL> select Constraint_Name,Constraint_Type from User_Constraints where TABLE_NAME='ACCOUNT5';
+
+CONSTRAINT_NAME                C
+------------------------------ -
+SYS_C007116                    P
+SYS_C007117                    U
+SYS_C007119                    C
+
+
+
+LAB SHEET 6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
